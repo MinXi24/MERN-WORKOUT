@@ -1,7 +1,7 @@
-/* google font */
+/* Google font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
- 
-/* layout */
+
+/* Layout */
 :root {
   --primary: #1aac83;
   --error: #e7195a;
@@ -9,7 +9,7 @@
 body {
   background: #f1f1f1;
   margin: 0;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 header {
   background: #fff;
@@ -31,31 +31,79 @@ header a {
   padding: 20px;
   margin: 0 auto;
 }
- 
-/* homepage */
+
+/* Homepage */
 .home {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
+
+/* Search bar */
+.search-bar {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Workouts and form container */
+.content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Workouts container */
+.workouts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  flex: 3;  /* Takes up 3 parts of the space */
+}
+
+/* Workout details card styles */
 .workout-details {
   background: #fff;
   border-radius: 4px;
-  margin: 20px auto;
+  margin: 20px 0;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
+
+.workout-details:hover {
+  transform: scale(1.05);
+}
+
 .workout-details h4 {
   margin: 0 0 10px 0;
-  font-size: 1.2em;
+  font-size: 1.4rem;
   color: var(--primary);
 }
+
 .workout-details p {
   margin: 0;
-  font-size: 0.9em;
+  font-size: 1rem;
   color: #555;
 }
+
 .workout-details span {
   position: absolute;
   top: 20px;
@@ -66,13 +114,30 @@ header a {
   border-radius: 50%;
   color: #333;
 }
- 
-/* new workout form */
-label,
-input {
+
+/* No workouts found message */
+.workouts p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+/* New workout form styles */
+.create {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1;  /* Takes up 1 part of the space */
+  max-width: 400px;
+}
+
+.create label,
+.create input {
   display: block;
 }
-input {
+
+.create input {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -81,6 +146,7 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 form button {
   background: var(--primary);
   border: 0;
@@ -90,6 +156,7 @@ form button {
   border-radius: 4px;
   cursor: pointer;
 }
+
 div.error {
   padding: 10px;
   background: #ffefef;
@@ -98,6 +165,7 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+
 input.error {
   border: 1px solid var(--error);
 }
