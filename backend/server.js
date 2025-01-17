@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 
 // Routes
 // workoutRoutes is triggered when we make a request to /api/workouts
+app.use(express.json());
 app.use("/api/workouts", workoutRoutes);
 
 // Connect to DB
