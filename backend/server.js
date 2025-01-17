@@ -14,6 +14,7 @@ const mongoose = require("mongoose");
 const workoutRoutes = require("./routes/workouts");
 
 // Set up the express app
+const cors = require("cors");
 const app = express();
 
 // Middleware:
@@ -21,7 +22,7 @@ const app = express();
 // and us sending a response back to the client
 
 // Parse and attach data sent to server to request object
-app.use(express.json());
+app.use(cors());
 
 // Global middleware
 // the arrow function will fire for each request that comes in
