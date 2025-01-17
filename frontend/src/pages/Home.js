@@ -23,10 +23,10 @@ const Home = () => {
 
     // Filter workouts based on search query
     // Filter workouts based on search query, ensuring workouts is an array
-const filteredWorkouts = (workouts || []).filter(workout =>
-    (workout.title && workout.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
-    (workout.description && workout.description.toLowerCase().includes(searchQuery.toLowerCase()))
-);
+    const filteredWorkouts = (workouts || []).filter(workout =>
+        (workout.title && workout.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (workout.description && workout.description.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
 
 
     return (
