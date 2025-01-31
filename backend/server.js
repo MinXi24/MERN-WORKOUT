@@ -12,6 +12,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 // Require routes
 const workoutRoutes = require("./routes/workouts");
+const userRoutes = require("./routes/user");
 
 // Set up the express app
 const cors = require("cors");
@@ -23,6 +24,7 @@ const app = express();
 
 // Parse and attach data sent to server to request object
 app.use(cors());
+app.use(express.json());
 
 // Global middleware
 // the arrow function will fire for each request that comes in
@@ -33,8 +35,9 @@ app.use((req, res, next) => {
 
 // Routes
 // workoutRoutes is triggered when we make a request to /api/workouts
-app.use(express.json());
+
 app.use("/api/workouts", workoutRoutes);
+app.use("/api/user", userRoutes);
 
 // Connect to DB
 mongoose
